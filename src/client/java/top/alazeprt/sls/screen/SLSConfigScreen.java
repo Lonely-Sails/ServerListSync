@@ -87,11 +87,15 @@ public class SLSConfigScreen extends Screen {
 
     @Override
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-        super.render(context, mouseX, mouseY, delta);
+        // 1. 先渲染所有子组件 (按钮、输入框等)
         context.drawTextWithShadow(textRenderer, Text.literal("服务器地址"), width/2-170, height*2/9+5, 0xffffff);
         context.drawTextWithShadow(textRenderer, Text.literal("排序方式"), width/2-170, (int) (height*3.5/9+5), 0xffffff);
         context.drawTextWithShadow(textRenderer, Text.literal("更新时间"), width/2-170, height*5/9+5, 0xffffff);
         context.drawCenteredTextWithShadow(textRenderer, Text.literal("ServerListSync 配置界面"), width/2, height/9, 0xffffff);
+
+        super.render(context, mouseX, mouseY, delta);
+
+        System.out.println("SLSConfigScreen.render() 被调用");
     }
 
     @Override

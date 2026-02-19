@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.8-SNAPSHOT'
+	id 'fabric-loom' version '1.13-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -45,6 +45,9 @@ dependencies {
 
 	// Mod Menu
 	modImplementation "com.terraformersmc:modmenu:${project.modmenu_version}"
+	
+	// Apache HttpClient for HttpUtil
+	modImplementation include("org.apache.httpcomponents:httpclient:4.5.14")
 	
 }
 
